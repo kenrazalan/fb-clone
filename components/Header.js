@@ -49,7 +49,7 @@ function Header() {
                     alt="user profile"
                 />
 
-                <p className="font-semibold pr-3">Kenneth Razalan</p>
+                <p className="font-semibold pr-3">{session.user.name}</p>
 
                 <ViewGridAddIcon className="icon"/>
                 <ChatIcon className="icon"/>
