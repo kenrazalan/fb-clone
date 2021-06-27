@@ -9,7 +9,7 @@ function Header() {
 
     const [session] = useSession()
     return (
-        <div className="sticky top-0 z-50 bg-white flex items-center p-2 lg:p-5 shadow-md">
+        <div className="sticky top-0 z-50 bg-white flex items-center p-2 lg:p-5 shadow-md justify-between">
             <div className="flex items-center">
                 <Image 
                     src="https://links.papareact.com/5me" 
@@ -26,7 +26,7 @@ function Header() {
                 </div>
             </div>
 
-            <div className="flex justify-center flex-grow">
+            <div className="hidden md:inline-flex justify-center flex-grow">
                 <div className="flex space-x-6 md:space-x-2">
                     <HeaderIcon active Icon={HomeIcon}/>
                     <HeaderIcon Icon={FlagIcon}/>
@@ -38,7 +38,7 @@ function Header() {
             </div>
 
             <div className="flex items-center sm:space-x-2 justify-end">
-
+                <div className="hidden md:inline-flex items-center">
                 <Image
                     className="rounded-full cursor-pointer"
                     onClick={signOut}
@@ -48,13 +48,18 @@ function Header() {
                     layout="fixed"
                     alt="user profile"
                 />
-
                 <p className="font-semibold pr-3">{session.user.name}</p>
+                </div>
 
+
+                <div className="flex">
                 <ViewGridAddIcon className="icon"/>
                 <ChatIcon className="icon"/>
                 <BellIcon className="icon"/>
                 <ChevronDownIcon className="icon"/>
+                </div>
+
+
             </div>
         </div>
     )
